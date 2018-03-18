@@ -15,9 +15,8 @@ with open(path, "r") as input_file: #open file
 
     if line[0] != "#":
         words = line.split(" ") #split on spaces
-        for word in words:
-            word = word[:10]
-            print("-------\ninserting {}".format(word))
-            tree.insert({"word":word,"lines":[i+1]})
+        for word in words:#\ #for every word
+            word = word[:10] #only keep first ten letters
+            tree.insert({"word":word,"lines":[i+1]}) #insert into tree
 
 tree.display()

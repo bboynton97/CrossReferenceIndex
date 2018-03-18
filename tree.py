@@ -30,36 +30,32 @@ class BST:
             self.insertNode(self.root, val)
 
     def insertNode(self, currentNode, val): #Organizes alphabetically
-        if val["word"] < currentNode.val["word"]:
-            if currentNode.leftChild:
-                self.insertNode(currentNode.leftChild, val)
-            else:
-                currentNode.leftChild = Node(val)
-        elif val["word"] > currentNode.val["word"]:
+        if val["word"] < currentNode.val["word"]: #if the word comes before the root word
+            if currentNode.leftChild: #and left child exists
+                self.insertNode(currentNode.leftChild, val) #give that left child a node with the val recursively
+            else: #if not
+                currentNode.leftChild = Node(val) #create a left child and give it the val
+        elif val["word"] > currentNode.val["word"]: #same thing but for right
             if currentNode.rightChild:
                 self.insertNode(currentNode.rightChild, val)
             else:
                 currentNode.rightChild = Node(val)
         else: #if they're equal
             lines = currentNode.val["lines"]
-            lines += val["lines"]
-            currentNode.val['lines'] = lines
-            print("\nequal -> {}".format(currentNode.val))
+            lines += val["lines"] #add the new line count to the lines value
+            currentNode.val['lines'] = lines #set the new lines
 
-    def find(self, val):
-        return self.findNode(self.root, val)
-
-    def display(self):
+    def display(self): #display tree
         self.display_nodes(self.root)
 
-    def display_nodes(self, root):
-        if root is None:
+    def display_nodes(self, root): #recursively display nodes inorder
+        if root is None: #if the node doesn't exist, stop
             return
 
-        if root.getLeft() is not None:
+        if root.getLeft() is not None: #print left first
             self.display_nodes(root.getLeft())
 
-        print("{}\t\t\t{}".format(root.get()["word"], root.get()["lines"]))
+        print("{}\t\t\t{}".format(root.get()["word"], root.get()["lines"])) #then the root
 
-        if root.getRight() is not None:
+        if root.getRight() is not None: #then the right
             self.display_nodes(root.getRight())
