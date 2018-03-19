@@ -2,6 +2,18 @@
 
 Built for the CSCI 363000 Data Structures class at IUPUI.
 
+## How to run the program
+
+Navigate to the directory.
+Using Python2.7 run:
+`$ python driver.py`
+
+The assignment has not been tested in Python3.
+
+## Report
+
+Last time I put the report here, but apparently that's not okay. View the report (here)[report.txt]
+
 ## Assignment
 
 The objective of this programming project is to construct a cross-reference index for a given text

@@ -1,0 +1,23 @@
+Brandon Boynton
+CSCI 363000
+03-18-2018
+Assignment 2
+
+The purpose of this assignment was to produce a cross-reference index for any text file. This index would allow one to look at the index and find every line number where a given word can be found. Additionally, these words are in alphabetical order, making the word itself easier to find. In this index, the word will be on the left side, with the line counts listed in order on the right. Ex:
+
+a                       [3]
+add                     [5]
+an                      [1, 4, 7]
+be                      [1, 2]
+
+The cross-reference index is produced through the use of a Binary Search Tree. The first word in the txt file is added as the root of the tree. The next word is then compared to the first word. If it comes before the root node alphabetically, then it becomes the left child node. If it comes after, it is placed as the right child node. If the word is ever found to be a duplicate, the line count of the duplicate is appended onto the original. This process is repeated until the entire text file has been read and processed.
+
+Finally, once the program reads `#`, it displays the tree. In order to display in alphabetical order, it must be traversed inorder. First, the left node is printed, then the root, then the right, recursively repeating this process until the entire tree has been displayed.
+
+Throughout the processes of building this program, I had a few problems getting the Binary Search Tree to build and traverse properly. Fortunately, this data structure is very common and there were sufficient resources available online for helping me visualize the structure. The GeeksForGeeks website and USFCA computer science site are both very helpful tools for this.
+
+The purpose of the binary search tree is to reduce time complexity when searching the data structure and to build it in a pre-sorted fashion. Because of this nature of the search tree, it is ordered with an O(n) time complexity while being built. A Binary Search Tree also handles duplicates more elegantly. In an array, you would need to iterate over the entire array every time, see if there's any duplicates, then sort the array after placing the word. This would result in O(n^2) time complexity at least and would not be favorable.
+
+The remainder of the program simply prepares the text file for the binary search tree and displays the tree. The majority of the processing is happening through the tree.
+
+In conclusion, using the Binary Search Tree is a much more effective method for completing this task than a normal array. While it may be a little more difficult to implement initially, online resources and visualizers make it easier.
