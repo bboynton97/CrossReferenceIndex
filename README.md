@@ -12,7 +12,7 @@ The assignment has not been tested in Python3.
 
 ## Report
 
-Last time I put the report here, but apparently that's not okay. View the report (here)[report.txt]
+Last time I put the report here, but apparently that's not okay. View the report (here)[./report.txt]
 
 ## Assignment
 
