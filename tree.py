@@ -19,6 +19,7 @@ class Node:
 class BST:
     def __init__(self):
         self.root = None
+        self.outputFile = open("output.txt","w")
 
     def setRoot(self, val):
         self.root = Node(val)
@@ -47,15 +48,17 @@ class BST:
 
     def display(self): #display tree
         self.display_nodes(self.root)
+        self.outputFile.close()
 
     def display_nodes(self, root): #recursively display nodes inorder
         if root is None: #if the node doesn't exist, stop
             return
 
-        if root.getLeft() is not None: #print left first
+        if root.getLeft() is not None: #display left first
             self.display_nodes(root.getLeft())
 
         print("{}\t\t\t{}".format(root.get()["word"], root.get()["lines"])) #then the root
+        self.outputFile.write("{}\t\t\t{}\n".format(root.get()["word"], root.get()["lines"]))
 
         if root.getRight() is not None: #then the right
             self.display_nodes(root.getRight())

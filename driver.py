@@ -21,3 +21,4 @@ with open(path, "r") as input_file: #open file
                 tree.insert({"word":word,"lines":[i+1]}) #insert into tree
 
 tree.display()
+# tree.output()
